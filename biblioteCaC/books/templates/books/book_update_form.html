@@ -10,7 +10,7 @@
     <div class="container-crear">   
         <div class="item-crear">
             
-            <form action="" method="POST" id="form" class="form">
+            <form action="" method="POST" enctype="multipart/form-data" id="form" class="form">
                 {% if 'ok' in request.GET %}
                     <p style="color:green">Página editada correctamente<a href="{% url 'books:book' book.id book.title|slugify %}" style="color:blue"> | Mirá el resultado</a>
                     </p>
