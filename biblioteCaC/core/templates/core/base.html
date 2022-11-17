@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>{% block title %}BiblioteCaC{% endblock %}</title>
+
+    <!-- Estilos y fuentes del template -->
+    {% load static %}
+    <link href="{% static 'core/img/logo/book-rojo.ico' %}" rel="icon"/>
+    <link href="{% static 'core/css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/home.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/book_list.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/book.css' %}" rel="stylesheet" />
+    <link href="{% static 'core/css/contact.css' %}" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/0cebf067a0.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <!-- Navegación -->
+      <nav>
+          <div id="nav-logo">
+              <span>BiblioteCaC</span>
+          </div>
+
+          <ul>
+              <li><a href="{% url 'home' %}">Inicio</a></li>
+              <li><a href="{% url 'books:books' %}">Libros</a></li> 
+              <li><a href="/admin/">{% if request.user.is_staff %}Admin{% else %}Acceder{% endif %}</a></li>
+          </ul>
+      </nav>
+
+    <!--Contenido-->
+    {% block content %}{% endblock %}
+
+    <!-- Pie de página -->
+    <footer class="footer">
+      <div class="item-redes">
+          <a href="#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+          <a href="#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+      </div>
+      
+      <div class="item-firma">
+          <p>BiblioteCaC &copy; 2022 | Diseño y Desarrollo por G9</p>
+      </div>
+    </footer>
+
+</body>
+</html>

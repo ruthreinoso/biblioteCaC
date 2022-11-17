@@ -1,0 +1,97 @@
+main {
+    padding-top: 20vh;
+}
+
+.container-crear{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin: 2rem;
+}
+
+.item-crear{
+    margin-top: 20vh;
+    color: rgb(65, 65, 65);
+    width: 75vw;
+    height: 130vh;
+    flex-wrap: wrap;
+}
+
+.form{
+    margin: 5rem 7rem;
+    flex-wrap: wrap;
+}
+
+.form-control1{
+    text-align: left;
+    line-height: normal;
+    width: 100%;
+}
+
+.form-control1, input:focus {
+    outline: none;
+}
+
+input, select, textarea{
+    background: none;
+    font-size: 1.5rem;
+    padding: 0.7rem 0.7rem 0.7rem 0.5rem;
+    width: 100%;
+    border: 1px solid;
+    border-radius: 0.5rem;
+}
+
+.b-form:hover{
+    color: rgb(65, 65, 65);
+    cursor: pointer;
+}
+
+@media screen and (min-width:640px) and (max-width:1024px) {
+
+    body{
+        font-size: 2rem;
+    }
+
+    main {
+        padding-top: 26vh;
+    }
+
+    .container-crear{
+        margin: 1rem;
+    }
+
+    .item-crear{
+        width: 100%;
+        height: 150vh;
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width:640px) {
+    body{
+        font-size: 2rem;
+    }
+
+    main {
+        padding-top: 46vh;
+    }
+
+    .container-crear{
+        margin: 0;
+    }
+
+    .item-crear{
+        width: 100%;
+        height: 160vh;
+        margin-bottom: 2rem;
+    }
+
+    .form{
+        margin: 3rem 5rem;
+    }
+
+    .form div{
+        line-height: 2.5rem;
+    }    
+}

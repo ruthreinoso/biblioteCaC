@@ -1,0 +1,34 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Libros{% endblock title %}
+{% load static %}
+
+{% block content %}
+{% include 'books/includes/books_menu.html' %}
+<main>   
+    <div class="container-biblioteca">
+        <div class="items-library1">
+            <div class="front-end">
+                {% for book in book_list|dictsort:"id" reversed %}
+                <div class="items-front-end"> 
+                    <div>
+                        <img src="{{book.image.url}}" alt="Imagen libro de HTML">
+                    </div>
+                    <div>
+                        <h5>{{book.title}}</h5>
+                        <p>{{book.author}}</p>
+                        <p>
+                            <button class="buttons"><a href="{% url 'books:book' book.id book.title|slugify %}">Leer más</a></button>
+                            | <button class="buttons"><a href="{% url 'books:update' book.id %}">Editar</a></button>
+                            | <button class="buttons"><a href="{% url 'books:delete' book.id %}">Borrar</a></button>
+                        </p>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+</main>
+{% endblock content %}

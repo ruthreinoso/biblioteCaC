@@ -1,0 +1,19 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Borrar libro{% endblock %}
+{% load static %}
+
+{% block content %}
+{% include 'books/includes/books_menu.html' %}
+<main>
+    <div class="container-crear">
+        <div class="item-crear">
+            <form action="" method="POST" id="form" class="form">
+                {% csrf_token %}
+                <p>¿Estás seguro de que quieres borrar el libro: " <b>{{ object }}</b> "?</p>
+                <button class="buttons b-form" type="submit">Borrar Libro</button>
+            </form>
+        </div>
+    </div>
+</main> 
+{% endblock %}

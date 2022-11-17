@@ -1,0 +1,70 @@
+main{
+    padding-top: 10vh;
+}
+
+.container-inicio {
+    display: block;
+    height: auto;
+}
+
+.items-inicio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.inicio1 {
+    height: 50vh;
+    background-image: linear-gradient(
+        0deg,
+        rgba(0,0,0,0.5),
+        rgba(0,0,0,0.5)
+        )
+    , url(../img/fondos/books-2596809_1280.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    background-attachment: fixed;
+    color: rgb(238, 238, 238);
+}
+
+.inicio2 {
+    height: 60vh;
+    margin: 5rem;
+}
+
+@media screen and (min-width:640px) and (max-width:1024px) {
+    body{
+        font-size: 2rem;
+    }
+
+    main {
+        padding-top: 16vh;
+    }
+
+    .inicio2 {
+        margin: 10rem 5rem;
+    }
+
+}
+
+@media screen and (max-width:640px) {
+    body{
+        font-size: 2rem;
+    }
+
+    main {
+        padding-top: 20vh;
+    }
+
+    .inicio1 {
+        font-size: 1.7rem;
+    }
+
+    .inicio2{
+        height: 150vh;
+        flex-direction: column;
+        margin: 5rem 3rem;
+    }
+
+}

@@ -1,0 +1,25 @@
+{% extends 'core/base.html' %}
+
+{% block title %}{{book.title}}{% endblock title %}
+{% load static %}
+
+{% block content %}
+{% include 'books/includes/books_menu.html' %}
+<main>   
+    <div class="container-book">
+        <div class="item-book1">
+            <img src="{{book.image.url}}" alt="">
+        </div>
+        <div class="item-book2">
+            <h4>{{book.title}}</h4>
+            <h5>Autor: {{book.author}}</h5>
+            <h5>Género: {{book.genre}}</h5>
+            <h5>Sinopsis:</h5>
+            <p>{{book.synopsis|safe}}</p>
+            <button class="buttons"><a href="{% url 'books:update' book.id %}">Editar</a></button>
+
+        </div>
+
+    </div>
+</main>
+{% endblock content %}

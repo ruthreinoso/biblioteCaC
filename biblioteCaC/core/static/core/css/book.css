@@ -1,0 +1,71 @@
+main {
+    padding-top: 10vh;
+}
+
+.container-book {
+    display: flex;
+    height: auto;
+    margin: 7rem 5rem;
+}
+
+.item-book1 img {
+    border-radius: 2rem;
+    width: 30rem;
+    height: 45rem;
+    margin-right: 2rem;
+}
+
+.item-book2 h4,
+h5,
+p {
+    text-align: left;
+    margin: 2rem;
+}
+
+.buttons:hover {
+    color: rgb(65, 65, 65);
+}
+
+.item-book2 h5 {
+    color: rgb(70, 142, 229);
+}
+
+@media screen and (min-width:640px) and (max-width:1024px) {
+    body {
+        font-size: 2rem;
+    }
+
+    main {
+        padding-top: 16vh;
+    }
+
+    .container-book {
+        flex-wrap: wrap;
+    }
+
+    .item-book2 h4,
+    h5,
+    p {
+        margin: 1rem 0rem;
+    }
+}
+
+@media screen and (max-width:640px) {
+    body {
+        font-size: 2rem;
+    }
+
+    main {
+        padding-top: 20vh;
+    }
+
+    .container-book {
+        flex-wrap: wrap;
+    }
+
+    .item-book2 h4,
+    h5,
+    p {
+        margin: 1rem 0rem;
+    }
+}

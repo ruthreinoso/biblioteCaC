@@ -1,0 +1,27 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Editar Libro{% endblock title %}
+{% load static %}
+<link href="{% static 'books/css/book_form.css' %}" rel="stylesheet" />
+
+{% block content %}
+{% include 'books/includes/books_menu.html' %}
+<main> 
+    <div class="container-crear">   
+        <div class="item-crear">
+            
+            <form action="" method="POST" id="form" class="form">
+                {% if 'ok' in request.GET %}
+                    <p style="color:green">Página editada correctamente<a href="{% url 'books:book' book.id book.title|slugify %}" style="color:blue"> | Mirá el resultado</a>
+                    </p>
+                {% endif %}
+                {% csrf_token %}
+                <div class="form-control">
+                    {{ form.as_p }}
+                </div>    
+                <button class="buttons b-form" type="submit">Editar Libro</button>
+            </form>
+        </div>
+    </div>
+</main> 
+{% endblock content %}

@@ -1,0 +1,21 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Crear Libro{% endblock title %}
+{% load static %}
+
+{% block content %}
+{% include 'books/includes/books_menu.html' %}
+<main> 
+    <div class="container-crear">
+        <div class="item-crear">
+            <form action="" method="POST" id="form" class="form">
+                {% csrf_token %}
+                <div class="form-control1">
+                    {{ form.as_p }}
+                </div>    
+                <button class="buttons b-form" type="submit" value="">Crear Libro</button>
+            </form>
+        </div>
+    </div>
+</main> 
+{% endblock content %}

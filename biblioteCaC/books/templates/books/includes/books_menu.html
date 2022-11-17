@@ -1,0 +1,16 @@
+{% load static %}
+<link href="{% static 'books/css/books_menu.css' %}" rel="stylesheet" />
+<script type="text/javascript" src="{% static "ckeditor/ckeditor-init.js" %}"></script>
+<script type="text/javascript" src="{% static "ckeditor/ckeditor/ckeditor.js" %}"></script>
+
+<nav class="library-menu">
+    <div class="container">
+        <span><i>Administrar</i></span>
+        <div>
+            <ul class="sub-menu">
+                <li><a href="{% url 'books:create' %}"><i>Crear Libro</i></a></li>
+                <li><a href="{% url 'books:books' %}"><i>Listar Libros</i></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
