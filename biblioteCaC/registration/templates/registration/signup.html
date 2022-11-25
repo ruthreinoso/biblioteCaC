@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Registrarse{% endblock title %}
+{% load static %}
+
+{% block content %}
+<style>.errorlist{color:red;} label{display: none;}</style>
+<main> 
+    <div class="container-crear">
+        <div class="item-crear">
+            <form action="" method="POST" id="form" class="form">
+                <div class="form-control1">
+                    {% csrf_token %}
+                    <h3>Registrarse</h3>
+                    {{form.as_p}}
+                    <p><button class="buttons b-form" type="submit" value="">Confirmar</button></p>
+                </div>
+            </form>
+        </div>
+    </div>
+</main> 
+{% endblock content %}
