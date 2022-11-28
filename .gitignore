@@ -4,3 +4,4 @@ __pycache__
 front_biblioteCaC
 media
 db.sqlite3
+sent_emails
