@@ -17,6 +17,7 @@ main {
     column-gap: 2rem;
     row-gap: 7rem;
     color: rgb(238, 238, 238);
+    flex-wrap: wrap;
 }
 
 .items-front-end {

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import BookList, BookDetail, BookCreate, BookUpdate, BookDelete
+from .views import BookList, BookDetail, BookCreate, BookUpdate, BookDelete, CategoryView
 
 
 books_patterns = ([
@@ -8,4 +8,5 @@ books_patterns = ([
     path('create/', BookCreate.as_view(), name='create'),
     path('update/<int:pk>/', BookUpdate.as_view(), name='update'),
     path('delete/<int:pk>/', BookDelete.as_view(), name='delete'),
+    path('category/<int:category_id>/', CategoryView.as_view(), name='category_view')
 ], 'books' )

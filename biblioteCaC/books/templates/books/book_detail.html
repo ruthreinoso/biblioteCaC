@@ -11,7 +11,8 @@
             <img src="{{book.image.url}}" alt="">
         </div>
         <div class="item-book2">
-            <h4>{{book.title}}</h4>
+            <h4>{{book.title|upper}}</h4>
+            <h4>Categoría: <a style="color:rgb(70, 142, 229)" href="{% url 'books:category_view' book.category.id %}">{{book.category}}</a></h4>
             <h5>Autor: {{book.author}}</h5>
             <h5>Género: {{book.genre}}</h5>
             <h5>Sinopsis:</h5>

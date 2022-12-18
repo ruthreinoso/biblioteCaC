@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Categoría{% endblock title %}
+{% load static %}
+
+{% block content %}
+<main>   
+    <div class="container-biblioteca">
+        
+        <div style="margin-top:3rem;">
+            <h4>Todos los libros para la categoría: {{category.development_area|upper}}</h4>
+        </div>
+        
+        <div class="items-library1">
+            <div class="front-end">
+                {% for book in category.get_books.all %}
+                <div class="items-front-end">
+                    <div>
+                        <img src="{{book.image.url}}" alt="Imagen libro de HTML">
+                    </div>
+                    <div>
+                        <h5>{{book.title}}</h5>
+                        <p>{{book.author}}</p>
+                        <p>
+                            <button class="buttons"><a href="{% url 'books:book' book.id book.title|slugify %}">Leer más</a></button>
+                        </p>
+                    </div>
+                </div>
+                {% empty %}
+
+                <div style="margin-top:3rem; color:red;">
+                    <h4>No existen libros para la categoría: {{category.development_area|upper}}</h4>
+                </div>
+
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+</main>
+{% endblock content %}

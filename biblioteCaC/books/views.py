@@ -1,6 +1,7 @@
-from .models import Book
+from .models import Book, Category
 from .forms import BookForm
 from django.urls import reverse_lazy
+from django.views.generic import View
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -14,6 +15,16 @@ class BookList(ListView):
     
 class BookDetail(DetailView):
     model = Book
+    template_name = 'books/book_detail.html'
+
+class CategoryView(ListView):
+    template_name = 'books/category.html'
+    context_object_name = 'category'
+
+    def get_queryset(self):
+        category_id = self.kwargs['category_id']
+        category = Category.objects.get(id=category_id)
+        return category
 
 @method_decorator(staff_member_required, name='dispatch')
 class BookCreate(CreateView):

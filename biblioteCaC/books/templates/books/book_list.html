@@ -24,7 +24,20 @@
                         </p>
                     </div>
                 </div>
+                {% empty %}
+                    <div style="margin-top:3rem; color:red;">
+                        <h4>No existen libros en la Biblioteca</h4>
+                    </div>
                 {% endfor %}
+            </div>
+            
+            <div>
+                <h5 style="color:rgb(65, 65, 65); text-transform: uppercase;">Categorías</h5>
+                <ul>
+                    {% for item in categories %}
+                        <li><a style="color:rgb(70, 142, 229)" href="{% url 'books:category_view' item.id %}">{{item.development_area}}</a></li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
 

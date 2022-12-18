@@ -1,0 +1,24 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Contacto{% endblock title %}
+{% load static %}
+
+{% block content %}
+<main>
+       
+    <div class="container-crear">
+        <div class="item-crear">
+            <form action="" method="POST" id="form" class="form">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div>
+                    <button class="buttons b-form" type="submit">Enviar</button>
+                    
+                    <button class="buttons b-form" type="reset">Borrar datos</button>
+                </div>
+    
+            </form>
+        </div>
+    </div>
+</main>
+{% endblock content %}
